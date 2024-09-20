@@ -53,19 +53,21 @@ h1 {
 }
 
 #players {
+  
   list-style: none;
   padding: 0;
   margin: 1rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
   gap: 2rem;
 }
 
 #players li {
   display: flex;
   align-items: center;
-  width: 50%;
   border: 2px solid transparent;
 }
 
@@ -96,6 +98,11 @@ h1 {
 }
 
 .player {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   border: 2px solid transparent;
   padding: 0.5rem;
   border-radius: 4px;
@@ -156,7 +163,7 @@ ol {
 
 #game-board {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 2rem;
   margin: 3rem 0;
@@ -166,9 +173,9 @@ ol {
 
 #game-board ol {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   margin: 0;
   padding: 0;
 }
@@ -342,5 +349,17 @@ ol {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media screen and (max-width:600px) {
+  #players {
+    flex-wrap: wrap;
+  }
+
+  #game-board button {
+    width: 6rem;
+    height: 6rem;
+    font-size: 3.5rem;
   }
 }
